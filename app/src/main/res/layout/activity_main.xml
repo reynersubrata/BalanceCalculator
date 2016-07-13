@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.reynersubrata.balancecalculator.MainActivity">
+
+
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.reynersubrata.balancecalculator.MainActivity">
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/viewA"
+    android:background="#fce4ec"
+    android:baselineAligned="false"
+    android:gravity="center"
+    >
 
     <EditText
         android:id="@+id/Income"
@@ -27,6 +45,7 @@
 
         />
 
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,13 +62,6 @@
         android:inputType="number"
         />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ResButton"
-        android:layout_below="@+id/outcome"
-        android:src="@drawable/abc_ic_star_black_16dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,15 +72,34 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <EditText
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/Val"
+        android:layout_alignBaseline="@+id/tv_Result"
+        android:text="aaaa" />
+
+
+</LinearLayout>
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#e8eaf6"
+    android:baselineAligned="false"
+    android:gravity="center">
+
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tv_Result"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/ResButton"
-        android:layout_toEndOf="@+id/ResButton"
-        android:id="@+id/gridLayout">
+        android:layout_width="160dp"
+        android:layout_height="214dp"
+        android:id="@+id/gridLayout"
+        android:layout_gravity="center">
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -179,16 +210,18 @@
             android:layout_column="2" />
     </GridLayout>
 
-    <EditText
+
+</LinearLayout>
+</LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/Val"
-        android:layout_alignBaseline="@+id/tv_Result"
-        android:layout_alignBottom="@+id/tv_Result"
-        android:layout_alignRight="@+id/outcome"
-        android:layout_alignEnd="@+id/outcome" />
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_action_action_settings_applications"
+        app:layout_anchor="@id/viewA"
+        app:layout_anchorGravity="bottom|right|end"/>
 
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

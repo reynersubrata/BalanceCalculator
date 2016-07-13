@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         result = (TextView)findViewById(R.id.tv_Result);
-        resbutton = (ImageButton) findViewById(R.id.ResButton);
+        resbutton = (ImageButton) findViewById(R.id.fab);
         resbutton.setOnClickListener(this);
         button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(this);
@@ -157,10 +157,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
         }
         if(view ==resbutton){
-            int a = Integer.parseInt(income.toString());
-            int b = Integer.parseInt(outcome.toString());
+            int a = Integer.parseInt(String.valueOf(income.getText()));
+            int b = Integer.parseInt(String.valueOf(outcome.getText()));
             int resultfinal = a-b;
-            val.setText(resultfinal);
+            val.setText(Integer.toString(resultfinal));
         }
     }
 }
